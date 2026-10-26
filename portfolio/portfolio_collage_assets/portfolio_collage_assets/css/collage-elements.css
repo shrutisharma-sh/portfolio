@@ -1,0 +1,59 @@
+/* Scrapbook collage building blocks — pair with your dark forest-green theme */
+:root {
+  --forest: #071b17;
+  --forest-panel: #0b2420;
+  --mint: #72dfb7;
+  --paper: #f0e6cf;
+  --ink: #17352e;
+}
+
+/* Graph-paper background */
+.graph-paper {
+  background-color: var(--forest);
+  background-image:
+    linear-gradient(rgba(132, 190, 165, .075) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(132, 190, 165, .075) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+/* Polaroid/photo card */
+.polaroid {
+  position: relative;
+  padding: 10px 10px 34px;
+  background: #e9e4d8;
+  box-shadow: 0 12px 28px rgba(0,0,0,.35);
+  transform: rotate(-4deg);
+}
+.polaroid img { display:block; width:100%; height:100%; object-fit:cover; }
+
+/* Washi tape — add an empty span inside the card */
+.washi-tape {
+  position:absolute; top:-13px; left:35%;
+  width:86px; height:25px;
+  background: rgba(213, 218, 199, .58);
+  transform: rotate(-8deg);
+  backdrop-filter: blur(2px);
+  box-shadow: 0 1px 2px rgba(0,0,0,.12);
+}
+
+/* Sticky note */
+.sticky-note {
+  padding: 18px 16px;
+  color: var(--ink);
+  background: var(--paper);
+  box-shadow: 3px 8px 18px rgba(0,0,0,.28);
+  transform: rotate(3deg);
+  font-family: "Comic Sans MS", "Segoe Print", cursive;
+}
+
+/* Optional fine grain overlay */
+.paper-noise {
+  position: relative;
+}
+.paper-noise::after {
+  content:"";
+  position:absolute; inset:0; pointer-events:none;
+  background: url("/assets/subtle-paper-noise.png") repeat;
+  opacity:.32;
+  mix-blend-mode:screen;
+}
